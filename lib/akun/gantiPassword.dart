@@ -113,8 +113,6 @@ TextEditingController controllerKonfirmPass;
                   })
                 ],
               ),
-              
-              
             ],
           ),)
         ))
