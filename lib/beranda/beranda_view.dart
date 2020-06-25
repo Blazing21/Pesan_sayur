@@ -7,7 +7,7 @@ class BerandaPage extends StatefulWidget {
   static const String id = "home_screen";
   @override
   _BerandaPageState createState() => new _BerandaPageState();
-}1
+}
 
 class _BerandaPageState extends State<BerandaPage> {
   
