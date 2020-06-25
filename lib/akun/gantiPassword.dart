@@ -39,9 +39,6 @@ TextEditingController controllerKonfirmPass;
       appBar: new AppBar(
         backgroundColor: Colors.green,
         title: const Center(child: Text('Ganti Password')),
-        actions: <Widget>[
-          IconButton(icon: new Icon(Icons.call, color: Colors.green)),
-        ],
       ),
       body: SafeArea(
         child: new Form(
@@ -110,7 +107,7 @@ TextEditingController controllerKonfirmPass;
                       color: Palette.darkGreen,
                       child: Text("Simpan", style: TextStyle(color: Colors.white),),
                       onPressed: (){
-                        Navigator.of(context).pop();
+                        Navigator.of(context).pushNamed(AkunPage.id);
                       })
                     );
                   })
