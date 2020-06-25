@@ -24,8 +24,6 @@ class _AboutState extends State<About>{
       appBar: new AppBar(
         backgroundColor: Colors.green,
         title: const Center(child: Text('About')),
-        leading: new IconButton(icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
-        onPressed: () {Navigator.of(context).pushNamed(AkunPage.id);}),  
         actions: <Widget>[
             new IconButton(icon: new Icon(Icons.call, color: Colors.green)),
         ],

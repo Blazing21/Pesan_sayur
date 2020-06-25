@@ -121,9 +121,7 @@ class _FormRegistrasiState extends State<FormRegistrasi> {
       resizeToAvoidBottomPadding: true,
       appBar: new AppBar(
         backgroundColor: Colors.green,
-        title: const Center(child: Text('Akun')),
-        leading: new IconButton(icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
-        onPressed: () {Navigator.of(context).pushNamed(AkunPage.id);}),  
+        title: const Center(child: Text('Edit Profil')),
         actions: <Widget>[
             new IconButton(icon: new Icon(Icons.call, color: Colors.green)),
         ],
@@ -319,8 +317,11 @@ class _FormRegistrasiState extends State<FormRegistrasi> {
 
                             color: Palette.darkGreen,
                             onPressed: (){
-                              showProgres();
+                              // showProgres();
                               // _onSave(context);
+                              // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AkunPage()));
+                              Navigator.of(context).pop();
+                              
                             },
                             child: Text("Simpan"),
                           );
