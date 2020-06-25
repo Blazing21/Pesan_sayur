@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:supplier_sayur/constant.dart';
+import 'package:supplier_sayur/akun/akun_view.dart';
 
 class About extends StatefulWidget{
   static const String id ="about";
@@ -13,18 +14,29 @@ class _AboutState extends State<About>{
     final paragraf = Padding(
       padding: EdgeInsets.all(20.0),
       child: Text(
-        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+        textAlign: TextAlign.justify,
       ),
     );
 
     return new Scaffold(
-      backgroundColor: Colors.white,
-      appBar: new AppBar(),
+      backgroundColor: Palette.whiteGrey,
+      appBar: new AppBar(
+        backgroundColor: Colors.green,
+        title: const Center(child: Text('About')),
+        leading: new IconButton(icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
+        onPressed: () {Navigator.of(context).pushNamed(AkunPage.id);}),  
+        actions: <Widget>[
+            new IconButton(icon: new Icon(Icons.call, color: Colors.green)),
+        ],
+      ),
+
       body: new Center(
         child:  Column(
           children: <Widget>[paragraf,]
         )
-      )
+      ),
+
     );
   } 
 }

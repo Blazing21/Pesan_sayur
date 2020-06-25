@@ -7,7 +7,7 @@ class BerandaPage extends StatefulWidget {
   static const String id = "home_screen";
   @override
   _BerandaPageState createState() => new _BerandaPageState();
-}
+}1
 
 class _BerandaPageState extends State<BerandaPage> {
   
@@ -15,7 +15,14 @@ class _BerandaPageState extends State<BerandaPage> {
   Widget build(BuildContext context) {
     return new Scaffold(
       backgroundColor: Palette.whiteGrey,
-      appBar: new AppBar(),
+      appBar: new AppBar(
+        backgroundColor: Colors.green,
+        title: const Center(child: Text('Supplier')),
+        leading: new IconButton(icon: new Icon(Icons.arrow_back_ios, color: Colors.green)),
+        actions: <Widget>[
+            new IconButton(icon: new Icon(Icons.search, color: Colors.white)),
+        ],
+      ),
       body: new Center(
         child: Text('Hello world')
       ),

@@ -4,8 +4,10 @@ import 'package:supplier_sayur/akun/about.dart';
 import 'package:supplier_sayur/akun/editProfil.dart';
 import 'package:supplier_sayur/akun/gantiPassword.dart';
 import 'package:supplier_sayur/login/login_screen.dart';
+import 'package:supplier_sayur/beranda/beranda_view.dart';
 
 class AkunPage extends StatefulWidget{
+    static const String id = "akun";
   @override 
   _AkunPageState createState() => new _AkunPageState();
 }
@@ -53,21 +55,42 @@ class _AkunPageState extends State<AkunPage> {
 
     final editProfil = Row(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        FlatButton(
-          child: Text('Edit Profil                                                       >'),
-          onPressed: () {Navigator.of(context).pushNamed(EditProfil.id);},
-        )
-      ],
+        children: <Widget>[ 
+          FlatButton(
+            child: Center(
+              child: Row(
+            children: <Widget>[
+              Text("Edit Profil"),
+              SizedBox(width: 190),
+              Icon(Icons.arrow_forward_ios, size: 16,)
+            ],
+          ),
+            ),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => FormRegistrasi()));
+          },
+        ),
+        ]
     );
 
     final gantiPassword = Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         FlatButton(
-          child: Text('Ganti Password                                             >'),
-          onPressed: () {Navigator.of(context).pushNamed(GantiPassword.id);},
-        )
+            child: Center(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text("Ganti Password"),
+              SizedBox(width: 150),
+              Icon(Icons.arrow_forward_ios, size: 16,)
+            ],
+          ),
+            ),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => GantiPassword()));
+          },
+        ),
       ],
     );
 
@@ -75,9 +98,19 @@ class _AkunPageState extends State<AkunPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         FlatButton(
-          child: Text('About                                                              >'),
-          onPressed: () {Navigator.of(context).pushNamed(About.id);},
-        )
+            child: Center(
+              child: Row(
+            children: <Widget>[
+              Text("About"),
+              SizedBox(width: 210),
+              Icon(Icons.arrow_forward_ios, size: 16,)
+            ],
+          ),
+            ),
+          onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => About()));
+          },
+        ),
       ],
     );
 
@@ -85,21 +118,24 @@ class _AkunPageState extends State<AkunPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         RaisedButton(
-          color: Colors.green,
+          color: Palette.darkGreen,
           child: Text('logout', style: TextStyle(color: Colors.white)),
           onPressed: () {Navigator.of(context).pushNamed(LoginScreen.id);}
         )
       ],
     );
 
-      return new Scaffold (
-        backgroundColor: Palette.whiteGrey,
-        appBar: new AppBar(),
-        body: new Center(
-          child:  Column(
-            children: <Widget>[profil, keterangan, editProfil, gantiPassword, about, logout],
-          )
+    return new Scaffold (
+      backgroundColor: Palette.whiteGrey,
+      appBar: new AppBar(
+        backgroundColor: Colors.green,
+        title: const Center(child: Text('Akun')),
+      ),
+      body: new Center(
+        child:  Column(
+          children: <Widget>[profil, keterangan, editProfil, gantiPassword, about, logout],
         )
-      );
+      )
+    );
   }
 }

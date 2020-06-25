@@ -54,7 +54,7 @@ class _LoginScreenState extends State<LoginScreen>{
           borderRadius: BorderRadius.circular(24),
         ),
         onPressed: () {
-          Navigator.of(context).pushNamed(LandingPage.id);
+          Navigator.pushReplacement (context, MaterialPageRoute(builder: (context)=> LandingPage() ));
         },
         padding: EdgeInsets.all(12),
         color: Colors.lightBlueAccent,
