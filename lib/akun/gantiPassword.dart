@@ -110,7 +110,7 @@ TextEditingController controllerKonfirmPass;
                       color: Palette.darkGreen,
                       child: Text("Simpan", style: TextStyle(color: Colors.white),),
                       onPressed: (){
-                        Navigator.of(context).pushNamed(AkunPage.id);
+                        Navigator.of(context).pop();
                       })
                     );
                   })
