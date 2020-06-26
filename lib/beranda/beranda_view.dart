@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:supplier_sayur/beranda/beranda_appbar.dart';
 import 'package:supplier_sayur/constant.dart';
 import 'package:supplier_sayur/items/person_list.dart';
+import 'package:supplier_sayur/landingpage/add_suplier.dart';
 
 
 class BerandaPage extends StatefulWidget {
@@ -64,7 +65,9 @@ class _BerandaPageState extends State<BerandaPage> {
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
         tooltip: 'Increment Counter',
-        onPressed: () {  },
+        onPressed: () { 
+          Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddSuplier()));
+         },
         child: const Icon(Icons.add,
         color: Colors.white),
       ),
