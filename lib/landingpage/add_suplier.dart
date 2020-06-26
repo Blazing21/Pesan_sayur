@@ -1,6 +1,6 @@
 
-
 import 'package:flutter/material.dart';
+import 'package:supplier_sayur/landingpage/detail_suplier.dart';
 
 import '../constant.dart';
 
@@ -9,9 +9,16 @@ class AddSuplier extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: <Widget>[
+          Icon(Icons.search, color: Colors.green,)
+        ],
         title: Center(
           child: Text("Suplier"),
         ),
+        leading: new IconButton(icon: new Icon(Icons.arrow_back_ios, color: Colors.white),
+        onPressed: () {
+          Navigator.of(context).pop();
+          }),
       ),
       body: new SafeArea(
         child: Form(
@@ -20,6 +27,7 @@ class AddSuplier extends StatelessWidget {
             child:Column(
               children: <Widget>[
                 new TextFormField(
+                  //controller: , controler dari nama
                     decoration: InputDecoration(
                         fillColor: Colors.white,
                       filled: true,
@@ -29,13 +37,14 @@ class AddSuplier extends StatelessWidget {
                       labelText: "Nama",
                     ),
                     onSaved: (val){
-                      
+                      // value dari nama disini
                     },
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   new TextFormField(
+                    //controller: , contoler no hp
                       decoration: InputDecoration(
                         fillColor: Colors.white,
                         filled: true,
@@ -45,7 +54,7 @@ class AddSuplier extends StatelessWidget {
                         labelText: "No Hp",
                       ),
                       onSaved: (val){
-                        
+                       //value dari no hp disini
                       },
                     ),
                     Expanded(child: SizedBox(
@@ -64,7 +73,7 @@ class AddSuplier extends StatelessWidget {
                             ),
                             color: Palette.darkGreen,
                             onPressed: (){
-                              
+                              Navigator.pushReplacement (context, MaterialPageRoute(builder: (context)=> AddBarangSuplier() ));
                             },
                             child: Text("Next"),
                           );
@@ -76,5 +85,7 @@ class AddSuplier extends StatelessWidget {
               ],
             )))),
     );
+    
   }
+  
 }
