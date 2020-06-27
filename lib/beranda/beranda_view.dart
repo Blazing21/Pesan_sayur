@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:supplier_sayur/beranda/beranda_appbar.dart';
-import 'package:supplier_sayur/constant.dart';
+import 'package:supplier_sayur/akun/profil.dart';
 import 'package:supplier_sayur/items/person_list.dart';
 import 'package:supplier_sayur/landingpage/add_suplier.dart';
 
@@ -16,50 +15,31 @@ class _BerandaPageState extends State<BerandaPage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-      backgroundColor: Palette.whiteGrey,
       appBar: new AppBar(
-        backgroundColor: Colors.green,
         title: const Center(child: Text('Daftar Supplier')),
-        leading: new IconButton(icon: new Icon(Icons.arrow_back_ios, color: Colors.green)),
         actions: <Widget>[
             new IconButton(icon: new Icon(Icons.search, color: Colors.white)),
         ],
       ),
-      body: ListView(
-        
-        shrinkWrap: true,
-        children: <Widget>[
-          ListPerson(),
-          Divider(
-            color: Colors.black,
-          ),
-          ListPerson(),
-          Divider(
-            color: Colors.black,
-          ),
-          ListPerson(),
-          Divider(
-            color: Colors.black,
-          ),
-          ListPerson(),
-          Divider(
-            color: Colors.black,
-          ),
-          ListPerson(),
-          Divider(
-            color: Colors.black,
-          ),
-          ListPerson(),
-          Divider(
-            color: Colors.black,
-          ),
-          ListPerson(),
-          Divider(
-            color: Colors.black,
-          ),
-          ListPerson(),
-
-        ],
+      body: Container(
+        child: ListView.builder(
+          shrinkWrap: true,
+          itemBuilder: (context, pos){
+            return GestureDetector(
+              onTap: (){
+                Navigator.of(context).push(MaterialPageRoute(builder: (context) => Profil()));
+              },
+              child: Column(
+                children: <Widget>[
+                  ListPerson(),
+                  Divider(
+                    color: Colors.black,
+                  )
+                ],
+              )
+            );
+          },
+      ),
       ),
       
       floatingActionButton: FloatingActionButton(

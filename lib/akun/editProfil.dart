@@ -7,15 +7,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:supplier_sayur/constant.dart';
 import 'package:supplier_sayur/akun/akun_view.dart';
 
-class FormRegistrasi extends StatefulWidget {
-  FormRegistrasi({Key key, this.title}) : super(key: key);
+class EditProfil extends StatefulWidget {
+  EditProfil({Key key, this.title}) : super(key: key);
   String title;
 
   @override
-  _FormRegistrasiState createState() => _FormRegistrasiState();
+  _EditProfilState createState() => _EditProfilState();
 }
 
-class _FormRegistrasiState extends State<FormRegistrasi> {
+class _EditProfilState extends State<EditProfil> {
   DateTime _date = new DateTime.now();
   // var formatTanggal = new DateFormat('YYYY-MM-dd');
   String filename, masuk;

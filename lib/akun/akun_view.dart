@@ -6,8 +6,10 @@ import 'package:supplier_sayur/akun/gantiPassword.dart';
 import 'package:supplier_sayur/login/login_screen.dart';
 import 'package:supplier_sayur/beranda/beranda_view.dart';
 
+import 'editProfil.dart';
+
 class AkunPage extends StatefulWidget{
-    static const String id = "akun";
+    // static const String id = "akun";
   @override 
   _AkunPageState createState() => new _AkunPageState();
 }
@@ -67,7 +69,7 @@ class _AkunPageState extends State<AkunPage> {
           ),
             ),
           onPressed: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => FormRegistrasi()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfil()));
           },
         ),
         ]
@@ -126,9 +128,7 @@ class _AkunPageState extends State<AkunPage> {
     );
 
     return new Scaffold (
-      backgroundColor: Palette.whiteGrey,
       appBar: new AppBar(
-        backgroundColor: Colors.green,
         title: const Center(child: Text('Akun')),
       ),
       body: new Center(

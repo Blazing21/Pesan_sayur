@@ -13,7 +13,11 @@ class _ShopPageState extends State<ShopPage> {
   Widget build(BuildContext context){
     return new SafeArea(
       child: Scaffold(
-        appBar: new AppBar(),
+        appBar: new AppBar(
+          title: Center(
+            child: Text("Shop"),
+          )
+        ),
         body: new Container(),
       )
     );

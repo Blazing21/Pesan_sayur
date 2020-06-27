@@ -2,6 +2,8 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:supplier_sayur/landingpage/add_suplier.dart';
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 
 class ListPerson extends StatelessWidget {
@@ -47,7 +49,12 @@ class ListPerson extends StatelessWidget {
                       SizedBox(
                         width: 10,
                       ),
-                      Icon(Icons.phone)
+                      InkWell(
+                        child: Icon(Icons.phone),
+                        onTap: () {
+                          UrlLauncher.launch("tel:+6285238718978");
+                        }
+                      )
                     ],
                   ),)),
                   
