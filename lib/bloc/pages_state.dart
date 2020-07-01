@@ -14,11 +14,23 @@ class OnLoginPage extends PagesState {
   List<Object> get props => [];
 }
 
-class OnSplashPage extends PagesState {
+// class OnSplashPage extends PagesState {
+//   @override
+//   List<Object> get props => [];
+// }
+class OnMainPage extends PagesState {
   @override
   List<Object> get props => [];
 }
-class OnMainPage extends PagesState {
+class OnAddSuplierPage extends PagesState {
+  final Supplier suplier;
+  OnAddSuplierPage(this.suplier);
+  @override
+  List<Object> get props => [];
+}
+class OnEditProfilPage extends PagesState {
+  final User user;
+  OnEditProfilPage(this.user);
   @override
   List<Object> get props => [];
 }

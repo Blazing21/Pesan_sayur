@@ -5,3 +5,4 @@ import 'package:suplier_sayur/extensions/extensions.dart';
 
 part  'auth_services.dart';
 part 'user_services.dart';
+part 'supplier_services.dart';
