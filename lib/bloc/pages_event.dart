@@ -29,3 +29,7 @@ class GoToEditProfilPage extends PagesEvent {
   @override
   List<Object> get props => [];
 }
+class GoToAkunPage extends PagesEvent {
+  @override
+  List<Object> get props => [];
+}

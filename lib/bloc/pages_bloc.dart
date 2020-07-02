@@ -29,6 +29,8 @@ class PagesBloc extends Bloc<PagesEvent, PagesState> {
       yield OnAddSuplierPage(event.suplier);
     }else if(event is GoToEditProfilPage){
       yield OnEditProfilPage(event.user);
+    }else if(event is GoToAkunPage){
+      yield OnAkunPage();
     }
   }
 }

@@ -25,6 +25,7 @@ class Wrapper extends StatelessWidget {
              (pageState is OnLoginPage) ? SignInPage() 
              :(pageState is OnAddSuplierPage) ? AddSuplier(pageState.suplier) 
              :(pageState is OnEditProfilPage) ? EditProfil(pageState.user)
+             :(pageState is OnAkunPage) ? AkunPage()
              :(pageState is OnMainPage) ? MainPage() : Container());
   }
 }

@@ -14,20 +14,28 @@ class _AkunPageState extends State<AkunPage> {
           tag: 'hero',
           child: Padding(
             padding: EdgeInsets.all(16.0),
-            child: CircleAvatar(
+            child: BlocBuilder<UserBloc, UserState>(
+                    builder: (_, userState) {
+            return CircleAvatar(
               radius:50.0,
               backgroundColor: Colors.transparent,
-              backgroundImage: AssetImage('assets/user_pic.png'),
-            )
-
+              backgroundImage: ((userState as UserLoaded).user.profilePicture != "")
+                                                ? NetworkImage(
+                                                    (userState as UserLoaded).user.profilePicture)
+                                                : AssetImage(
+                                                    "assets/user_pic.png"),
+                                            //fit: BoxFit.cover
+            );
+                    })
           ),
         );
 
-    final keterangan = Padding(
+    final keterangan = BlocBuilder<UserBloc,UserState>(builder: (_, userState) =>
+      Padding(
       padding: EdgeInsets.all(8.0),
       child: Column(
         children: <Widget>[
-          Text('Nama Admin',
+          Text((userState as UserLoaded).user.name,
             style: TextStyle(
               fontSize: 20.0, 
               color: Palette.darkGreen, 
@@ -35,7 +43,7 @@ class _AkunPageState extends State<AkunPage> {
             ),
           ),
           
-          Text('Nama Pasar',
+          Text((userState as UserLoaded).user.alamat,
             style: TextStyle(
               fontSize: 15.0, 
               color: Palette.darkGreen,
@@ -45,13 +53,14 @@ class _AkunPageState extends State<AkunPage> {
           ),
         ],
       )
-    );
+    )
+    ); 
 
     final editProfil = Row(
       mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[ 
           BlocBuilder<UserBloc, UserState>(
-            builder: (_, userState) {
+            builder: (_, userState) =>
           FlatButton(
             child: Center(
               child: Row(
@@ -67,11 +76,13 @@ class _AkunPageState extends State<AkunPage> {
             //Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfil()));
             context.bloc<PagesBloc>().add(GoToEditProfilPage((userState as UserLoaded).user));
           }
+          
             //},
           //)
           
-        );
-            })
+        )
+          
+            )  
         ]
     );
 
@@ -122,7 +133,7 @@ class _AkunPageState extends State<AkunPage> {
         RaisedButton(
           color: Palette.darkGreen,
           child: Text('logout', style: TextStyle(color: Colors.white)),
-          //onPressed: () {Navigator.of(context).pushNamed(LoginScreen.id);}
+          onPressed: () async {await AuthServices.signOut();}
         )
       ],
     );
