@@ -32,4 +32,5 @@ part 'transaksi_pages.dart';
 part 'transaksi_item.dart';
 part 'detail_transtiket.dart';
 part 'history_pages.dart';
+part 'add_barang_suplier_pages.dart';
 

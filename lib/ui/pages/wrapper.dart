@@ -23,9 +23,10 @@ class Wrapper extends StatelessWidget {
     return BlocBuilder<PagesBloc, PagesState>(
         builder: (_, pageState) => 
              (pageState is OnLoginPage) ? SignInPage() 
-             :(pageState is OnAddSuplierPage) ? AddSuplier(pageState.suplier) 
+             :(pageState is OnAddSuplierPage) ? AddSuplierPages(pageState.addsuplier) 
              :(pageState is OnEditProfilPage) ? EditProfil(pageState.user)
              :(pageState is OnAkunPage) ? AkunPage()
+             :(pageState is OnAddBarangPage) ? AddBarangSuplier(pageState.addsuplier)
              :(pageState is OnMainPage) ? MainPage() : Container());
   }
 }

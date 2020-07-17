@@ -17,3 +17,14 @@ class TambahSuplier extends SuplierEvent {
   @override
   List<Object> get props => [suplier];
 }
+
+// class TambahItemSuplier extends SuplierEvent {
+//   final Supplier supplier;
+//   final Map item;
+
+//   TambahItemSuplier(this.supplier, this.item);
+  
+//   @override
+//   List<Object> get props => [supplier];
+// }
+

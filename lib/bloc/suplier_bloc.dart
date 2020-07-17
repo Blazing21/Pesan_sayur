@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:suplier_sayur/bloc/blocs.dart';
 import 'package:suplier_sayur/models/models.dart';
 import 'package:suplier_sayur/services/services.dart';
 
@@ -26,6 +27,10 @@ class SuplierBloc extends Bloc<SuplierEvent, SuplierState> {
       List<Supplier> suplier = await SupplierServices.getSuplier(); //mengambil data tickets menurut userID pada firebase dan ditampung pada objek tickets.
 
       yield SuplierState(suplier); //mengembalikan state dengan parameter tickets yang menampung nilai data yang baru diambil dari firebase.
-    }
+    }// } else if (event is TambahItemSuplier){
+    //   await SupplierServices.addItem(event.supplier, event.item);
+
+    //   yield
+    // }
   }
 }

@@ -50,7 +50,7 @@ class _BerandaPageState extends State<BerandaPage> {
         tooltip: 'Increment Counter',
         onPressed: () { 
           //Navigator.of(context).push(MaterialPageRoute(builder: (context) => AddSuplier()));
-          context.bloc<PagesBloc>().add(GoToAddSuplierPage(Supplier()));
+          context.bloc<PagesBloc>().add(GoToAddSuplierPage(AddSuplier()));
          },
         child: const Icon(Icons.add,
         color: Colors.white),

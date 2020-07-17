@@ -1,12 +1,25 @@
 part of 'pages.dart';
 
-class AddSuplier extends StatelessWidget {
-  final Supplier suplier;
+class AddSuplierPages extends StatefulWidget {
+  final AddSuplier addsuplier;
 
-  AddSuplier(this.suplier);
+  AddSuplierPages(this.addsuplier);
 
+  @override
+  _AddSuplierPagesState createState() => _AddSuplierPagesState();
+}
+
+class _AddSuplierPagesState extends State<AddSuplierPages> {
   TextEditingController nameController = TextEditingController();
+
   TextEditingController nohpController = TextEditingController();
+
+  @override
+  void initState() { 
+    super.initState();
+    nameController.text = widget.addsuplier.name;
+    nohpController.text = widget.addsuplier.nohp;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,13 +88,15 @@ class AddSuplier extends StatelessWidget {
                               borderRadius: BorderRadius.all(Radius.circular(20))
                             ),
                             color: Palette.darkGreen,
-                            onPressed: () async {
+                            onPressed: ()  {
                               //Navigator.pushReplacement (context, MaterialPageRoute(builder: (context)=> AddBarangSuplier() ));
                             
-                              Supplier suplier = Supplier(name: nameController.text, nohp: nohpController.text);
+                              //Supplier suplier = Supplier(name: nameController.text, nohp: nohpController.text);
 
-                              context.bloc<SuplierBloc>().add(TambahSuplier(suplier));
-                              context.bloc<PagesBloc>().add(GoToMainPage());
+                              //context.bloc<SuplierBloc>().add(TambahSuplier(suplier));
+                              widget.addsuplier.name = nameController.text;
+                              widget.addsuplier.nohp = nohpController.text;
+                              context.bloc<PagesBloc>().add(GoToAddBarangPage(widget.addsuplier));
                             },
                             child: Text("Next"),
                           );
@@ -95,5 +110,4 @@ class AddSuplier extends StatelessWidget {
     );
     
   }
-  
 }

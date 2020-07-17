@@ -18,8 +18,8 @@ class GoToMainPage extends PagesEvent {
   List<Object> get props => [];
 }
 class GoToAddSuplierPage extends PagesEvent {
-  final Supplier suplier;
-  GoToAddSuplierPage(this.suplier);
+  final AddSuplier addsuplier;
+  GoToAddSuplierPage(this.addsuplier);
   @override
   List<Object> get props => [];
 }
@@ -30,6 +30,12 @@ class GoToEditProfilPage extends PagesEvent {
   List<Object> get props => [];
 }
 class GoToAkunPage extends PagesEvent {
+  @override
+  List<Object> get props => [];
+}
+class GoToAddBarangPage extends PagesEvent {
+  final AddSuplier addsuplier;
+  GoToAddBarangPage(this.addsuplier);
   @override
   List<Object> get props => [];
 }

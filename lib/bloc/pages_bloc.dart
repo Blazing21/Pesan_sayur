@@ -26,11 +26,13 @@ class PagesBloc extends Bloc<PagesEvent, PagesState> {
       yield OnMainPage();
     }
     else if(event is GoToAddSuplierPage){
-      yield OnAddSuplierPage(event.suplier);
+      yield OnAddSuplierPage(event.addsuplier);
     }else if(event is GoToEditProfilPage){
       yield OnEditProfilPage(event.user);
     }else if(event is GoToAkunPage){
       yield OnAkunPage();
+    }else if(event is GoToAddBarangPage){
+      yield OnAddBarangPage(event.addsuplier);
     }
   }
 }

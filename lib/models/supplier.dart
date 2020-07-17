@@ -4,11 +4,11 @@ class Supplier extends Equatable {
   //final String suplierid;
   final String name;
   final String nohp;
-  //final String alamat;
+  //final List itemsuplier;
   //final String foto;
 
   Supplier(
-      {this.name, this.nohp,
+      {this.name, this.nohp, //this.itemsuplier
       //this.alamat, this.foto
       });//kalo picture tidak diisi maka defaultnya null.
 

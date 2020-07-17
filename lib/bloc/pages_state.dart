@@ -23,8 +23,8 @@ class OnMainPage extends PagesState {
   List<Object> get props => [];
 }
 class OnAddSuplierPage extends PagesState {
-  final Supplier suplier;
-  OnAddSuplierPage(this.suplier);
+  final AddSuplier addsuplier;
+  OnAddSuplierPage(this.addsuplier);
   @override
   List<Object> get props => [];
 }
@@ -36,6 +36,12 @@ class OnEditProfilPage extends PagesState {
 }
 
 class OnAkunPage extends PagesState {
+  @override
+  List<Object> get props => [];
+}
+class OnAddBarangPage extends PagesState {
+  final AddSuplier addsuplier;
+  OnAddBarangPage(this.addsuplier);
   @override
   List<Object> get props => [];
 }

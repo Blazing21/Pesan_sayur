@@ -11,6 +11,7 @@ class Auth extends StatelessWidget {
           BlocProvider(create: (_) => PagesBloc()),
           BlocProvider(create: (_) => UserBloc()),
           BlocProvider(create: (_) => SuplierBloc()),
+          BlocProvider(create: (_) => ItemBloc()),
         ],
         child: MaterialApp(
             theme: new ThemeData(
