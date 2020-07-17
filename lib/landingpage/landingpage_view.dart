@@ -43,11 +43,11 @@ int _bottomNavCurrentIndex = 0;
       items:[
         BottomNavigationBarItem(
           activeIcon: new Icon(
-            Icons.home,
+            Icons.contacts,
             color: Palette.darkGreen,
           ),
           icon: new Icon(
-            Icons.home,
+            Icons.contacts,
             color: Palette.darkGrey,
           ),
           title: new Text(
@@ -57,11 +57,11 @@ int _bottomNavCurrentIndex = 0;
         
         BottomNavigationBarItem(
           activeIcon: new Icon(
-            Icons.assignment,
+            Icons.shopping_cart,
             color: Palette.darkGreen,
           ),
           icon: new Icon(
-            Icons.assignment,
+            Icons.shopping_cart,
             color: Palette.darkGrey,
           ),
           title: new Text(
@@ -71,11 +71,11 @@ int _bottomNavCurrentIndex = 0;
 
         BottomNavigationBarItem(
           activeIcon: new Icon(
-            Icons.mail,
+            Icons.transform,
             color: Palette.darkGreen,
           ),
           icon: new Icon(
-            Icons.mail,
+            Icons.transform,
             color: Palette.darkGrey,
           ),
           title: new Text(

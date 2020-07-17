@@ -28,8 +28,8 @@ class _TransaksiPageState extends State<TransaksiPage> {
         body: TabBarView(
           children: [
             OrderTicket(),
-            Icon(Icons.directions_car),
-            Icon(Icons.check_circle),
+            Deliveries(),
+            Complete()
           ])
       )
     );

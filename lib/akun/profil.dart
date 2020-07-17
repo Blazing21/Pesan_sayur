@@ -100,14 +100,13 @@ class _ProfilState extends State<Profil> {
                       height: 10,
                     ),
                     Table(
-                      border: TableBorder.all(),
                       children: [
                         TableRow(
                           children: [
-                            Text("Nama", style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-                            Text("Jumlah", style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-                            Text("Satuan", style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-                            Text("Harga", style: TextStyle(fontWeight: FontWeight.bold), textAlign: TextAlign.center,)
+                            Text("Nama", style: TextStyle(fontWeight: FontWeight.bold), ),
+                            Text("Jumlah", style: TextStyle(fontWeight: FontWeight.bold), ),
+                            Text("Satuan", style: TextStyle(fontWeight: FontWeight.bold), ),
+                            Text("Harga", style: TextStyle(fontWeight: FontWeight.bold), )
                           ]),
                           TableRow(
                           children: [
