@@ -39,3 +39,11 @@ class GoToAddBarangPage extends PagesEvent {
   @override
   List<Object> get props => [];
 }
+class GoToDetailPage extends PagesEvent {
+  final String nama;
+  final String nohp;
+  List<Item> items;
+  GoToDetailPage(this.nama,this.nohp,this.items);
+  @override
+  List<Object> get props => [];
+}

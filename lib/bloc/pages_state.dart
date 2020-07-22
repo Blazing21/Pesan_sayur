@@ -45,3 +45,11 @@ class OnAddBarangPage extends PagesState {
   @override
   List<Object> get props => [];
 }
+class OnDetailPage extends PagesState {
+  final String nama;
+  final String nohp;
+  List<Item> items;
+  OnDetailPage(this.nama,this.nohp, this.items);
+  @override
+  List<Object> get props => [];
+}

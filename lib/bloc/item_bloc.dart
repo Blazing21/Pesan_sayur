@@ -10,7 +10,8 @@ part 'item_event.dart';
 part 'item_state.dart';
 
 class ItemBloc extends Bloc<ItemEvent, ItemState> {
-  ItemState get initialState => ItemInitial();
+  @override
+  ItemState get initialState => ItemLoaded([]);
   //ItemBloc() : super(ItemInitial());
 
   @override
@@ -20,7 +21,10 @@ class ItemBloc extends Bloc<ItemEvent, ItemState> {
     if (event is TambahItemSuplier){
      await SupplierServices.addItem(event.supplier, event.item);
 
-    yield ItemInitial();
+      yield ItemLoaded([]);
+     }else if(event is AmbilItemSuplier){
+       List<Item> item = await SupplierServices.getItem(event.nohp);
+      yield ItemLoaded(item);
      }
   }
 }

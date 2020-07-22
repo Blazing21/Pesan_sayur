@@ -33,6 +33,8 @@ class PagesBloc extends Bloc<PagesEvent, PagesState> {
       yield OnAkunPage();
     }else if(event is GoToAddBarangPage){
       yield OnAddBarangPage(event.addsuplier);
+    }else if(event is GoToDetailPage){
+      yield OnDetailPage(event.nama,event.nohp,event.items);
     }
   }
 }

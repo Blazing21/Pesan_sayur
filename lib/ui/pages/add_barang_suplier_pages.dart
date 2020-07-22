@@ -13,6 +13,7 @@ class AddBarangSuplier extends StatefulWidget {
 
 
 class _AddBarangSuplierState extends State<AddBarangSuplier> {
+  int selectedAmount = 0;
   TextEditingController namaBarangController = TextEditingController();
   TextEditingController hargaController = TextEditingController();
   String dropdownValue = "satuan";
@@ -55,8 +56,32 @@ class _AddBarangSuplierState extends State<AddBarangSuplier> {
                   SizedBox(
                     height: 10,
                   ),
-                  new TextFormField(
-                    // controller: , controller dari ha
+                  new TextField(
+                     onChanged: (text) {
+                        String temp = '';
+
+                        for (int i = 0; i < text.length; i++) {
+                          temp += text.isDigit(i)
+                              ? text[i]
+                              : ''; //temp akan ditambahkan angka jika text.isDigitnya true kalau false menambahkan string kosong.
+                        }
+
+                        setState(() {
+                          selectedAmount = int.tryParse(temp) ??
+                              0; //mengubah temp menjadi bentuk integer.
+                        }); // disetState agar tetap berubah2 ketika onChanged.
+
+                        hargaController.text = NumberFormat.currency(
+                                locale: 'id_ID',
+                                symbol: '',
+                                decimalDigits: 0)
+                            .format(selectedAmount);
+
+                        hargaController
+                                .selection = //menetapkan posisi kursor agar tetap dikanan ketika diisi.
+                            TextSelection.fromPosition(TextPosition(
+                                offset: hargaController.text.length));
+                      },
                     controller: hargaController,
                       decoration: InputDecoration(
                         fillColor: Colors.white,
@@ -66,20 +91,17 @@ class _AddBarangSuplierState extends State<AddBarangSuplier> {
                         hintText: "Harga",
                         labelText: "Harga",
                       ),
-                      onSaved: (val){
-                        // value dari harga
-                      },
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
-                        Flexible(
-                          child: TextField(
-                            onTap: (){
-                              //total value disini
-                            },
-                            decoration: InputDecoration(hintText: "Total"),)),
+                        // Flexible(
+                        //   child: TextField(
+                        //     onTap: (){
+                        //       //total value disini
+                        //     },
+                        //     decoration: InputDecoration(hintText: "Total"),)),
                         DropdownButton<String>(
                     value: dropdownValue,
                     icon: Icon(Icons.unfold_more),

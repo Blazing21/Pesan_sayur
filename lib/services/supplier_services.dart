@@ -41,4 +41,20 @@ class SupplierServices{
     .add(itemMap).catchError((e){print(e.toString());});
   }
 
+  static Future<List<Item>> getItem(String nohp) async {
+    QuerySnapshot snapshot = await Firestore.instance.collection("suplier")
+    .document(nohp)
+    .collection("item").getDocuments();
+
+    var documents = snapshot.documents;
+    //.orderBy("time", descending: false)
+    return documents
+        .map((e) => Item( //dimaping menjadi Suplier
+            namaBarang: e.data['namaBarang'],
+            harga: e.data['harga'],
+            satuan: e.data['satuan']
+            ))
+        .toList();
+  }
+
 }

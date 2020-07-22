@@ -13,3 +13,12 @@ class TambahItemSuplier extends ItemEvent {
   @override
   List<Object> get props => [supplier];
 }
+
+class AmbilItemSuplier extends ItemEvent {
+  final String nohp;
+
+  AmbilItemSuplier(this.nohp);
+  
+  @override
+  List<Object> get props => [nohp];
+}

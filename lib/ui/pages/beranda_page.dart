@@ -10,6 +10,7 @@ class BerandaPage extends StatefulWidget {
 }
 
 class _BerandaPageState extends State<BerandaPage> {
+  // List item = [];
   
   @override
   Widget build(BuildContext context) {
@@ -29,8 +30,13 @@ class _BerandaPageState extends State<BerandaPage> {
           itemCount: sortedSuplier.length,
           itemBuilder: (_, index){
             return GestureDetector(
-              onTap: (){
+              onTap: ()async{
                 //Navigator.of(context).push(MaterialPageRoute(builder: (context) => Profil()));
+                //Supplier suplier = Supplier(name: sortedSuplier[index].name, nohp: sortedSuplier[index].nohp);
+                //context.bloc<ItemBloc>().add(AmbilItemSuplier(sortedSuplier[index].nohp));
+                List<Item> items = await SupplierServices.getItem(sortedSuplier[index].nohp);
+                print(items);
+                context.bloc<PagesBloc>().add(GoToDetailPage(sortedSuplier[index].name, sortedSuplier[index].nohp, items));
               },
               child: Column(
                 children: <Widget>[
