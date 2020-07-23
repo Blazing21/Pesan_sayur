@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "739634044662",
+    "firebase_url": "https://supplier-sayur-355a9.firebaseio.com",
+    "project_id": "supplier-sayur-355a9",
+    "storage_bucket": "supplier-sayur-355a9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:739634044662:android:2b243ddf336b27c1da56d7",
+        "android_client_info": {
+          "package_name": "com.example.suplier_sayur"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "739634044662-2j7ma0cmr3nuje3ts1fvli2ugjhr4sh3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBp5khTLWdPCYEmgrlMJL5lM2jPmJXRi-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "739634044662-2j7ma0cmr3nuje3ts1fvli2ugjhr4sh3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
