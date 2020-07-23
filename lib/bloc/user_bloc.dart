@@ -23,6 +23,12 @@ class UserBloc extends Bloc<UserEvent, UserState> {
       yield UserLoaded(user); //menerima parameter user dan memberikan isi parameter user nntinya kepada Class UserState yang property user dipanggil pada blocbuilder
     } else if (event is SignOut) {
       yield UserInitial();
-  }
+  }else if (event is UpdateData) {
+      User updatedUser = (state as UserLoaded)
+          .user 
+          .copyWith(name: event.name, profilePicture: event.profileImage);
+      await UserServices.updateUser(updatedUser); 
+      yield (UserLoaded(updatedUser));
+}
 }
 }

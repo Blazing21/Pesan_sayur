@@ -14,14 +14,32 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return StreamProvider.value(
-      value: AuthServices.userStream,
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (_) => PagesBloc()),
-          BlocProvider(create: (_) => UserBloc())
-        ],
-        child: MaterialApp(debugShowCheckedModeBanner: false, home: Wrapper())),
+    // return StreamProvider.value(
+    //   value: AuthServices.userStream,
+    //   child: MultiBlocProvider(
+    //     providers: [
+    //       BlocProvider(create: (_) => PagesBloc()),
+    //       BlocProvider(create: (_) => UserBloc())
+    //     ],
+    //     child: MaterialApp(
+    //         theme: new ThemeData(
+    //         fontFamily: 'exo 2',
+    //         primaryColor: Colors.green,
+    //         accentColor: Colors.white,
+    //       ),
+    //       title: 'Supplier Sayur',
+    //       debugShowCheckedModeBanner: false, 
+    //       home: Wrapper())),
+    // );
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Supplier Sayur',
+      theme: new ThemeData(
+        //fontFamily: 'exo 2',
+        primaryColor: Colors.green,
+        accentColor: Colors.white,
+      ),
+      home: LauncherPage(),
     );
   }
 }
