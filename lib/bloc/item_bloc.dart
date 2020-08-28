@@ -11,8 +11,8 @@ part 'item_state.dart';
 
 class ItemBloc extends Bloc<ItemEvent, ItemState> {
   @override
-  ItemState get initialState => ItemLoaded([]);
-  //ItemBloc() : super(ItemInitial());
+  // ItemState get initialState => ItemLoaded([]);
+  ItemBloc() : super(ItemLoaded([]));
 
   @override
   Stream<ItemState> mapEventToState(

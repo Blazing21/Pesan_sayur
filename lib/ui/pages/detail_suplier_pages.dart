@@ -96,44 +96,7 @@ class _ProfilState extends State<Profil> {
                     SizedBox(
                       height: 10,
                     ),
-                    Tabel(items: widget.items),
-                  //   SizedBox(
-                  //     height: 200,
-                  //   child: ListView.builder(
-                  //       shrinkWrap: true,
-                  // scrollDirection: Axis.horizontal, //scroll kesamping
-                  // itemCount: widget.items.length,
-                  // itemBuilder: (_, index) => Container(
-                  //         child:Table(
-                  //     children: [          
-                  //       TableRow(
-                  //         children: [
-                  //           Text(widget.items[index].namaBarang, style: TextStyle(fontWeight: FontWeight.bold), ),
-                  //           Text("Jumlah", style: TextStyle(fontWeight: FontWeight.bold), ),
-                  //           Text(widget.items[index].satuan, style: TextStyle(fontWeight: FontWeight.bold), ),
-                  //           Text(widget.items[index].harga, style: TextStyle(fontWeight: FontWeight.bold), )
-                  //         ])
-                  //     ]),
-                  //       ))),
-                  //   SizedBox(
-                  //     height: 200,
-                  //   child: ListView.builder(
-                  //       shrinkWrap: true,
-                  // scrollDirection: Axis.horizontal, //scroll kesamping
-                  // itemCount: widget.items.length,
-                  // itemBuilder: (_, index) => Container(
-                  //         child:Table(
-                  //     children: [          
-                  //       TableRow(
-                  //         children: [
-                  //           Text(widget.items[index].namaBarang, style: TextStyle(fontWeight: FontWeight.bold), ),
-                  //           Text("Jumlah", style: TextStyle(fontWeight: FontWeight.bold), ),
-                  //           Text(widget.items[index].satuan, style: TextStyle(fontWeight: FontWeight.bold), ),
-                  //           Text(widget.items[index].harga, style: TextStyle(fontWeight: FontWeight.bold), )
-                  //         ])
-                  //     ]),
-                  //       ))),
-                    
+                    Tabel(items: widget.items),  
                     FlatButton(
                       color: Colors.lightBlue,
                       shape: RoundedRectangleBorder(
@@ -156,29 +119,53 @@ class _ProfilState extends State<Profil> {
 class Tabel extends StatelessWidget {
   final List<Item> items;
   Tabel({this.items});
+
+  
   
   @override
   Widget build(BuildContext context) {
-    print(items);
+    print("ADA DATA NIH ${items}");
+    
     return Container(
-      child: SizedBox(
-                      height: 200,
-                    child: ListView.builder(
-                        shrinkWrap: true,
-                  scrollDirection: Axis.horizontal, //scroll kesamping
+      child: Column(
+        children: [
+          Container(
+            color: Colors.green,
+            child: Row(
+                  children: [
+                    Expanded(child: Text("Nama", style: TextStyle(fontWeight: FontWeight.bold),),),
+                    Expanded(child: Text("Harga", style: TextStyle(fontWeight: FontWeight.bold)),),
+                    Expanded(child: Text("Satuan",style: TextStyle(fontWeight: FontWeight.bold)),)
+                  ],
+                ),
+          ),
+                ListView.builder(
+                  shrinkWrap: true,
                   itemCount: items.length,
-                  itemBuilder: (_, index) => Container(
-                          child:Table(
-                      children: [          
-                        TableRow(
-                          children: [
-                            Text(items[index].namaBarang, style: TextStyle(fontWeight: FontWeight.bold), ),
-                            Text("Jumlah", style: TextStyle(fontWeight: FontWeight.bold), ),
-                            Text(items[index].satuan, style: TextStyle(fontWeight: FontWeight.bold), ),
-                            Text(items[index].harga, style: TextStyle(fontWeight: FontWeight.bold), )
-                          ])
-                      ]),
-                        ))),
+                  itemBuilder: (_,index){
+                    return Container(
+                      child: Column(
+                        children: [
+                          Table(
+                            border: TableBorder.all(),
+                              children: [
+                                TableRow(
+                                  children: [
+                                    Text(items[index].namaBarang),
+                                    Text(items[index].satuan),
+                                    Text(items[index].harga)
+                                    ]
+                                    ),
+                              ])
+                        ],
+                      ),
+                    );
+                  },
+              ),
+        ],
+      )
+      
     );
-  }
+          }
+  
 }
