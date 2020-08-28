@@ -11,7 +11,7 @@ part 'pages_state.dart';
 class PagesBloc extends Bloc<PagesEvent, PagesState> {
   @override
   PagesState get initialState => OnInitialPage();
-
+  // PagesBloc() : super(OnInitialPage());
   @override
   Stream<PagesState> mapEventToState(
     PagesEvent event,

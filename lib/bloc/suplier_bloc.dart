@@ -12,7 +12,7 @@ part 'suplier_state.dart';
 class SuplierBloc extends Bloc<SuplierEvent, SuplierState> {
   @override
   SuplierState get initialState => SuplierState([]);
-
+  // SuplierBloc() : super(SuplierState([]));
   @override
   Stream<SuplierState> mapEventToState(
     SuplierEvent event,

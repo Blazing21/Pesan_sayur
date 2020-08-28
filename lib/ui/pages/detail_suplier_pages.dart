@@ -102,16 +102,16 @@ class _ProfilState extends State<Profil> {
                     SizedBox(
                       height: 10,
                     ),
-                    Tabel(items: widget.items,)
-                    // FlatButton(
-                    //   color: Colors.lightBlue,
-                    //   shape: RoundedRectangleBorder(
-                    //           borderRadius: BorderRadius.all(Radius.circular(30))
-                    //         ),
-                    //   onPressed: (){
-                    //     //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AddBarangSuplier()));
-                    //   }, 
-                    //   child: Icon(Icons.add, color: Colors.white,))
+                    Tabel(items: widget.items),  
+                    FlatButton(
+                      color: Colors.lightBlue,
+                      shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.all(Radius.circular(30))
+                            ),
+                      onPressed: (){
+                        //Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AddBarangSuplier()));
+                      }, 
+                      child: Icon(Icons.add, color: Colors.white,))
                 ],
               )
             )],
@@ -124,18 +124,53 @@ class _ProfilState extends State<Profil> {
 class Tabel extends StatelessWidget {
   final List<Item> items;
   Tabel({this.items});
+
+  
   
   @override
   Widget build(BuildContext context) {
-    print(items);
-    return ListView.builder(
-                        shrinkWrap: true,
-                  scrollDirection: Axis.horizontal, //scroll kesamping
+    print("ADA DATA NIH ${items}");
+    
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            color: Colors.green,
+            child: Row(
+                  children: [
+                    Expanded(child: Text("Nama", style: TextStyle(fontWeight: FontWeight.bold),),),
+                    Expanded(child: Text("Harga", style: TextStyle(fontWeight: FontWeight.bold)),),
+                    Expanded(child: Text("Satuan",style: TextStyle(fontWeight: FontWeight.bold)),)
+                  ],
+                ),
+          ),
+                ListView.builder(
+                  shrinkWrap: true,
                   itemCount: items.length,
-                  itemBuilder: (_, index) {
+                  itemBuilder: (_,index){
                     return Container(
-                      child: Text(items[index].namaBarang),
+                      child: Column(
+                        children: [
+                          Table(
+                            border: TableBorder.all(),
+                              children: [
+                                TableRow(
+                                  children: [
+                                    Text(items[index].namaBarang),
+                                    Text(items[index].satuan),
+                                    Text(items[index].harga)
+                                    ]
+                                    ),
+                              ])
+                        ],
+                      ),
                     );
-                  });
-  }
+                  },
+              ),
+        ],
+      )
+      
+    );
+          }
+  
 }
